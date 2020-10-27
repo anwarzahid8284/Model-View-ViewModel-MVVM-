@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "note_tb")
 public class NoteModel {
     @PrimaryKey(autoGenerate = true)
-    private int noteId;
+    public int noteId;
 
     @ColumnInfo(name = "noteTitle")
     private String noteTitle;

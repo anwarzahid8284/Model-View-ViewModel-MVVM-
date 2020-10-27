@@ -21,28 +21,27 @@ public class NoteRepository {
         getAllNotes = noteDAO.getAllNotes();
     }
 
-    private void insert(NoteModel noteModel) {
+    public void insert(NoteModel noteModel) {
         InsertNoteAsyncTask insertNoteAsyncTask = new InsertNoteAsyncTask(noteDAO);
         insertNoteAsyncTask.execute(noteModel);
     }
 
-    private void update(NoteModel noteModel) {
+    public void update(NoteModel noteModel) {
         UpdateNoteAsyncTask updateNoteAsyncTask = new UpdateNoteAsyncTask(noteDAO);
         updateNoteAsyncTask.execute(noteModel);
     }
 
     // methods
-    private void delete(NoteModel noteModel) {
+    public void delete(NoteModel noteModel) {
         DeletNoteAsyncTask deletNoteAsyncTask = new DeletNoteAsyncTask(noteDAO);
         deletNoteAsyncTask.execute(noteModel);
     }
 
-    private void deleteAll(NoteModel noteModel) {
-        DeleteAllNotesAsyncTask deleteAllNotesAsyncTask = new DeleteAllNotesAsyncTask(noteDAO);
-        deleteAllNotesAsyncTask.execute();
+    public void deleteAll() {
+        new DeleteAllNotesAsyncTask(noteDAO).execute();
     }
 
-    private LiveData<List<NoteModel>> getAllNotes(NoteModel noteModel) {
+    public LiveData<List<NoteModel>> getAllNotes() {
         return getAllNotes;
     }
 
