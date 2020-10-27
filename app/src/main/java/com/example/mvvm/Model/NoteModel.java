@@ -16,9 +16,9 @@ public class NoteModel {
     private String noteDes;
 
     @ColumnInfo(name = "notePriority")
-    private String notePriority;
+    private int notePriority;
 
-    public NoteModel(String noteTitle, String noteDes, String notePriority) {
+    public NoteModel(String noteTitle, String noteDes, int notePriority) {
         this.noteTitle = noteTitle;
         this.noteDes = noteDes;
         this.notePriority = notePriority;
@@ -36,7 +36,7 @@ public class NoteModel {
         return noteDes;
     }
 
-    public String getNotePriority() {
+    public int getNotePriority() {
         return notePriority;
     }
 }
