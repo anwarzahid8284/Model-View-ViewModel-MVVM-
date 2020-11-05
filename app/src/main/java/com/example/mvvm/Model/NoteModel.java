@@ -24,10 +24,16 @@ public class NoteModel implements Serializable {
         this.noteTitle = noteTitle;
         this.noteDes = noteDes;
         this.notePriority = notePriority;
+
     }
+
 
     public void setNoteId(int noteId) {
         this.noteId = noteId;
+    }
+
+    public int getNoteId() {
+        return noteId;
     }
 
     public String getNoteTitle() {
@@ -41,4 +47,6 @@ public class NoteModel implements Serializable {
     public int getNotePriority() {
         return notePriority;
     }
+
+
 }
